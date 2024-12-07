@@ -1,0 +1,154 @@
+.navbar {
+    background-color: #032541;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar-header {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .navbar-brand {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 0;
+    margin-right: 20px;
+  }
+  
+  /* Hamburger Icon */
+  .navbar-toggle {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  /* Main Navigation Links */
+  .nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+  
+  .nav-item {
+    margin-right: 20px;
+  }
+  
+  .nav-item a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-weight: bold;
+  }
+  
+  /* Right-Aligned Links */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .navbar-right .nav-item {
+    margin-left: 20px;
+  }
+  
+  /* Actions Styling */
+  .actions {
+    display: flex;
+  }
+  
+  .actions a {
+    margin-left: 10px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  /* Mobile & Tablet Styling */
+  @media (max-width: 768px) {
+    /* Center the Logo */
+    .navbar-header {
+      justify-content: center;
+      width: 100%;
+    }
+  
+    /* Show hamburger icon */
+    .navbar-toggle {
+      display: block;
+    }
+  
+    /* Hide navigation links by default */
+    .nav, .navbar-right {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    /* Show menu when toggled */
+    .show-menu {
+      display: flex;
+    }
+  
+    /* Align menu items properly on mobile */
+    .nav-item {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    /* Right-aligned actions move to the bottom on mobile */
+    .navbar-right {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+  
+  /* Desktop View */
+  @media (min-width: 769px) {
+    .navbar-header {
+      justify-content: flex-start;
+    }
+  
+    .nav {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  
+    .navbar-right {
+      justify-content: flex-end;
+    }
+  
+    .navbar-toggle {
+      display: none;
+    }
+  }
+  
+  .second_header {
+    background-color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .second_header nav a {
+    color: black;
+    margin: 0 10px;
+    text-decoration: none;
+  }
