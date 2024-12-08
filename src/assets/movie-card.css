@@ -1,35 +1,76 @@
+
+
 .movie-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
 }
+/* .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+} */
+
+.main-div{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
 .poster {
-  margin-right: 20px;
+  /* margin-right: 20px; */
+  /* margin: 20px 180px; */
+  margin: 20px 0px;
   border-radius: 10px;
+  border: 2px solid white;
+  padding: 10px;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+.poster:hover {
+  transform: scale(1.1); /* Slightly enlarge the poster on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Add a shadow around the poster */
+  opacity: 0.9; /* Slightly reduce the opacity */
 }
 
 .details {
   max-width: 800px;
+  text-align: center;
 }
+.details h1{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.details p{
+  margin-top: 5px;
+  color: rgb(214, 214, 214);
+}
+
 
 .score-container {
   display: flex;
   align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .score {
   background: green;
   color: white;
   padding: 10px;
-  border-radius: 50%;
+  font-size: 20px;
+  border-radius: 10px;
   display: inline-block;
   margin-right: 10px;
 }
 
-.trailer-btn {
+/* .trailer-btn {
   margin: 2px;
   margin-top: 10px;
   padding: 8px 15px;
@@ -38,10 +79,41 @@
   border: none;
   border-radius: 5px;
 }
+.trailer-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3); 
+  transform: scale(1.05); 
+} */
+
+.trailer-btn {
+  margin: 2px;
+  margin-top: 10px;
+  padding: 15px 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.trailer-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Styling for icons inside buttons */
+.trailer-btn i {
+  margin-right: 8px; /* Add space between icon and text */
+  font-size: 1.2em; /* Increase icon size */
+  color: black;
+}
 
 .buttons-container {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .buttons-container .trailer-btn {
@@ -118,11 +190,15 @@
 /* Search Button */
 .search-btn {
   padding: 10px 15px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+.search-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
 /* Mobile Responsiveness */
@@ -140,5 +216,36 @@
   .search-btn {
     padding: 8px 12px;
     font-size: 14px;
+  }
+}
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: add a semi-transparent background */
+  z-index: 1000;
+}
+
+.loader {
+  border: 8px solid #f3f3f3; /* Light gray */
+  border-top: 8px solid #3498db; /* Blue color for the spinning effect */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite; /* Adjust animation time here */
+}
+
+/* Animation for the spinning effect */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="movie-card">
+  <div class="movie-card" >
     <!-- Search bar -->
     <div class="search-container">
       <input
@@ -18,23 +18,23 @@
     </div>
 
     <!-- Movie details section -->
-    <div v-if="movie.title && !loading">
+    <div v-if="movie.title && !loading" class="main-div">
       <img :src="movie.poster" alt="Movie Poster" class="poster" />
       <div class="details">
         <h1>{{ movie.title }} ({{ movie.year }})</h1>
         <p>{{ movie.releaseDate }} • {{ movie.genre }} • {{ movie.runtime }}</p>
         <div class="score-container">
           <div class="score">
-            <span>{{ movie.rating }}%</span>
+            <span>{{ movie.rating }}</span>
           </div>
-          <span>User Score</span>
+          <span>TMDB Rating</span>
         </div>
         <br />
         <div class="buttons-container">
-          <button class="trailer-btn">list</button>
-          <button class="trailer-btn">like</button>
-          <button class="trailer-btn">save</button>
-          <button class="trailer-btn play-trailer">Play Trailer</button>
+          <button class="trailer-btn"> <i class="fas fa-list"></i>&nbsp;list</button>
+          <button class="trailer-btn"> <i class="fas fa-thumbs-up"></i>&nbsp;like</button>
+          <button class="trailer-btn"> <i class="fas fa-save"></i>&nbsp;save</button>
+          <button class="trailer-btn play-trailer"><i class="fas fa-play"></i>&nbsp;Play Trailer</button>
         </div>
         <br /><br />
         <h2>Overview</h2>
@@ -109,7 +109,10 @@ export default {
           movie.value = {}; // Clear the movie details on error
         })
         .finally(() => {
-          loading.value = false; // Set loading to false after fetch is complete
+          // Set loading to false after 2 seconds
+          setTimeout(() => {
+            loading.value = false; // Hide loader after 2 seconds
+          }, 2000); // 2000ms = 2 seconds
         });
     };
 
@@ -128,6 +131,7 @@ export default {
   },
 };
 </script>
+
 
 
 <style scoped></style>
